@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import *
+from .forms import *
 
 
 def index(request):
@@ -37,3 +38,15 @@ def article_detail(request, pk):
         'article': article
     }
     return render(request, 'blog/article_detail.html', context)
+
+
+def add_article(request):
+    if request.method == 'POST':
+        pass
+    else:
+        form = Articleform()
+    context = {
+        'title': 'Добавить статью',
+        'form': form
+    }
+    return render(request, 'blog/article_form.html', context)
