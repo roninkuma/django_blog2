@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock title %}
+
+
+{% block main %}
+{% include 'blog/components/_header.html' %}
+
+
+<!--Card-->
+<div class="container" style="padding-top: 75px;">
+    <div class="d-flex justify-content-between">
+        <div class="row">
+            {% for article in articles %}
+            {% include 'blog/components/_card.html' %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<!--Card-->
+
+{% endblock main %}

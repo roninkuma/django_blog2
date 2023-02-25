@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock title %}
+
+
+{% block main %}
+<div class="container">
+    <div class="d-flex justify-content-between">
+        <div class="col-8">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between">
+                    <div>
+                        <h5>{{ article.category }}</h5>
+                    </div>
+                    <div>
+                        <a href="" class="btn btn-dark">Изменить</a>
+                        <a href="" class="btn btn-dark">Удалить</a>
+                        <a href="" class="btn btn-dark">Назад</a>
+                    </div>
+                </div>
+
+                <img src="{{ article.get_photo }}" alt="">
+
+                <h3>{{ article.title }}</h3>
+                <p>{{ article.content }}</p>
+
+                <div class="card-footer d-flex justify-content-between">
+                    <h5>Дата: {{ article.created_at }}</h5>
+                    <h5>Просмотры: {{ article.views }}</h5>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock main %}
